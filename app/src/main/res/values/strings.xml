@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Store</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="address">Address</string>
+    <string name="job_status">Job Status</string>>
+    <string name="monthly_income">Monthly Income</string>
+
+    <string name="empty_first_name_error">Enter employee\'s first name</string>
+    <string name="empty_last_name_error">Enter employee\'s last name</string>
+    <string name="empty_contact_number_error">Enter employee\'s contact number</string>
+    <string name="empty_address_error">Enter employee\'s address</string>
+    <string name="empty_job_status_error">Enter employee\'s job status</string>
+    <string name="empty_monthly_income_error">Enter employee\'s monthly income</string>
+
+    <string name="inserted_data">Successfully inserted data</string>
+    <string name="not_inserted_data">Data didn\'t insert. Please, try again.</string>
+
+    <string name="insert_employee">Insert Employee</string>
+
+    <string name="update_employee">Update Employee</string>
+
+    <string name="insert_to_expense">Insert expense\'s data</string>
+    <string name="insert_to_sale">Insert sale\'s data</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="want_to_insert_employee_data">Do you want to insert the employee\'s data?</string>
+    <string name="want_to_insert_expense_data">Do you want to insert the expense\'s data?</string>
+    <string name="want_to_insert_sale_data">Do you want to insert the sale\'s data?</string>
+
+
+    <string name="want_to_update_employee_data">Do you want to update the employee\'s data?</string>
+
+    <string name="want_to_call_or_delete">Do you want to call the employee or delete the employee\'s data?</string>
+
+    <string name="call">Call</string>
+    <string name="delete">Delete</string>
+</resources>
