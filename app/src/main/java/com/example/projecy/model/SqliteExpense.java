@@ -185,6 +185,7 @@ public class SqliteExpense extends SQLiteOpenHelper {
         values.put(Constants.productSerial,productSerial);
         values.put(Constants.quantityOfProduct,quantityOfProduct);
         values.put(Constants.productType,productType);
+        values.put(Constants.remainingProduct,quantityOfProduct);
 
         long check=db.update(TABLE_EXPENSE,values,Constants.id+" = ?",new String[] {String.valueOf(id)});
         if (check==-1){return false;}
