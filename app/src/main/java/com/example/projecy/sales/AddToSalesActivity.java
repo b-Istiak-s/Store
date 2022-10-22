@@ -76,7 +76,7 @@ public class AddToSalesActivity extends AppCompatActivity {
                 if (version!=null) {
                     ArrayAdapter<String> adapterProductType = new ArrayAdapter<>(AddToSalesActivity.this, android.R.layout.simple_spinner_item, version);
                     spinnerVersion.setAdapter(adapterProductType);
-                    name = editable.toString();
+                    name = editable.toString().trim();
                 }
             }
         });
@@ -143,7 +143,7 @@ public class AddToSalesActivity extends AppCompatActivity {
                 etxtQuantityOfSale.requestFocus();
             } else {
                 if (Integer.parseInt(quantityOfSale)>sqliteSale.productRemainingQuantity(productName,versionForSqlite)){
-                    Toast.makeText(this, "Please, calculate the quantity of product properly. You have "+sqliteSale.productRemainingQuantity(productName,versionForSqlite)+" of "+productName+" and version : "+versionForSqlite + " in stock.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Please, calculate the quantity of product properly. You have only "+sqliteSale.productRemainingQuantity(productName,versionForSqlite)+" of "+productName+" and version : "+versionForSqlite + " in stock.", Toast.LENGTH_LONG).show();
                 }else {
                     String profit = String.valueOf(Integer.parseInt(salePrice) * Integer.parseInt(quantityOfSale) - Integer.parseInt(purchasePrice) * Integer.parseInt(quantityOfSale) - Integer.parseInt(extraCost));
                     builder.setMessage("Profit=" + profit + "; " + getString(R.string.want_to_insert_sale_data))
@@ -151,7 +151,7 @@ public class AddToSalesActivity extends AppCompatActivity {
                             .setPositiveButton(getString(R.string.yes), (dialog, id) -> {
                                 boolean checkInsertion = sqliteSale.insertData(productName, versionForSqlite, purchasePrice, salePrice, String.valueOf(day), String.valueOf(month), String.valueOf(year), timeOfSale, extraCost, quantityOfSale, profit);
                                 if (checkInsertion) {
-                                    Toast.makeText(this, getString(R.string.inserted_data)+" You have "+ (-Integer.parseInt(quantityOfSale) + sqliteSale.productRemainingQuantity(productName, versionForSqlite)) +" of "+productName+" and version : "+versionForSqlite, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this, getString(R.string.inserted_data)+" You have "+ (sqliteSale.productRemainingQuantity(productName, versionForSqlite)) +" of "+productName+" and version : "+versionForSqlite, Toast.LENGTH_SHORT).show();
                                     finish();
                                 } else {
                                     Toast.makeText(this, getString(R.string.not_inserted_data), Toast.LENGTH_SHORT).show();
