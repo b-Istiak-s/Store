@@ -151,7 +151,7 @@ public class AddToSalesActivity extends AppCompatActivity {
                             .setPositiveButton(getString(R.string.yes), (dialog, id) -> {
                                 boolean checkInsertion = sqliteSale.insertData(productName, versionForSqlite, purchasePrice, salePrice, String.valueOf(day), String.valueOf(month), String.valueOf(year), timeOfSale, extraCost, quantityOfSale, profit);
                                 if (checkInsertion) {
-                                    Toast.makeText(this, getString(R.string.inserted_data)+" You have "+ (sqliteSale.productRemainingQuantity(productName, versionForSqlite)) +" of "+productName+" and version : "+versionForSqlite, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this, getString(R.string.inserted_data)+" You have sold "+ quantityOfSale +" of "+productName+" and version : "+versionForSqlite, Toast.LENGTH_SHORT).show();
                                     finish();
                                 } else {
                                     Toast.makeText(this, getString(R.string.not_inserted_data), Toast.LENGTH_SHORT).show();
